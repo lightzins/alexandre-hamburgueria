@@ -1,0 +1,1697 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Hamburgueria Alexandre — Nova Iguaçu, RJ. R. Humeboshi, 302 - Jardim Paraíso. Hambúrgueres artesanais na chapa, porções e bebidas. Peça pelo WhatsApp!">
+<meta name="theme-color" content="#180c02">
+<title>Hamburgueria Alexandre · Nova Iguaçu - RJ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --ink: #140a02;
+  --dark-surface: #1e1005;
+  --cream: #fff9f0;
+  --orange: #f47a00;
+  --orange-light: #ff9d33;
+  --red: #8b1a1a;
+  --red-deep: #5e0e0e;
+  --yellow: #f5c518;
+  --muted: #bdaea0;
+  --muted-light: #e5ded7;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-orange: rgba(244, 122, 0, 0.35);
+  --green-wpp: #25D366;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, select:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.wrap { width: min(1240px, calc(100% - 64px)); margin: auto; }
+
+/* Top Notification Banner */
+.demo {
+  padding: 10px 20px;
+  text-align: center;
+  background: linear-gradient(90deg, #7a1414, #991b1b, #7a1414);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.demo .demo-tag {
+  background: rgba(0,0,0,0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.demo a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--yellow);
+  font-weight: 800;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(20, 10, 2, 0.95);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.header.scrolled {
+  background: rgba(15, 7, 1, 0.98);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border-bottom-color: var(--line-orange);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 88px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid var(--orange);
+  box-shadow: 0 4px 15px rgba(244, 122, 0, 0.3);
+  flex-shrink: 0;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.logo-text strong {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  line-height: 0.95;
+  color: #fff;
+}
+.logo-text strong span {
+  color: var(--orange);
+}
+.logo-text small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  margin-left: auto;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+.nav-links a {
+  color: var(--muted-light);
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: var(--orange);
+}
+
+.btn-wpp {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--green-wpp);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: transform 0.2s, background-color 0.2s;
+  flex-shrink: 0;
+}
+.btn-wpp:hover {
+  background: #1eb956;
+  transform: translateY(-2px);
+  color: #fff;
+}
+.btn-wpp svg { width: 16px; height: 16px; fill: currentColor; }
+
+.cart-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: var(--orange);
+  color: #140a02;
+  border: 0;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: transform 0.2s, background-color 0.2s;
+  flex-shrink: 0;
+}
+.cart-button:hover {
+  background: var(--orange-light);
+  transform: translateY(-2px);
+}
+.cart-count {
+  background: #140a02;
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 900;
+}
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 640px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(244, 122, 0, 0.15);
+  border: 1px solid var(--line-orange);
+  color: var(--orange-light);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: inline-block;
+  animation: pulseDotFire 2s infinite;
+}
+@keyframes pulseDotFire {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 122, 0, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(244, 122, 0, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 122, 0, 0); }
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--orange);
+}
+.eyebrow:before {
+  content: '';
+  height: 6px;
+  width: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+}
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(65px, 7.8vw, 115px);
+  line-height: 0.9;
+  letter-spacing: 2px;
+  margin: 22px 0;
+  text-transform: uppercase;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--orange);
+}
+.hero h1 span.subtext {
+  display: block;
+  font-size: clamp(28px, 3.5vw, 48px);
+  color: var(--yellow);
+  letter-spacing: 4px;
+}
+.hero-copy p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 460px;
+  margin: 0 0 30px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 0;
+  padding: 16px 28px;
+  background: var(--orange);
+  color: #140a02;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+.button:hover {
+  background: var(--orange-light);
+  transform: translateY(-2px);
+}
+.button.outline {
+  background: transparent;
+  border: 2px solid var(--orange);
+  color: var(--orange);
+}
+.button.outline:hover {
+  background: var(--orange);
+  color: #140a02;
+}
+.button.wpp-btn-hero {
+  background: var(--green-wpp);
+  color: #fff;
+}
+.button.wpp-btn-hero:hover {
+  background: #1eb956;
+}
+
+.hero-note {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  margin-top: 24px;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.hero-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  color: var(--orange);
+  line-height: 1;
+}
+.hero-stat-desc {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* Hero Image Container */
+.hero-photo {
+  height: 520px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+.hero-photo img {
+  border-radius: 12px;
+  filter: contrast(1.05) brightness(0.95);
+}
+.hero-photo:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(244, 122, 0, 0.4);
+  border-radius: 12px;
+  pointer-events: none;
+}
+.hero-badge {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  background: linear-gradient(135deg, var(--orange), #c75a00);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  line-height: 1.15;
+  letter-spacing: 1.5px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  animation: heroBadgeFloat 5s ease-in-out infinite;
+}
+@keyframes heroBadgeFloat {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-8px) rotate(-2deg); }
+}
+
+/* Marquee Ticker */
+.alex-marquee {
+  background: var(--orange);
+  color: #140a02;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 16px 0;
+}
+.alex-marquee-track {
+  display: inline-flex;
+  gap: 40px;
+  animation: marqueeAlex 25s linear infinite;
+  will-change: transform;
+}
+.alex-marquee-track:hover {
+  animation-play-state: paused;
+}
+.alex-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+@keyframes marqueeAlex {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Section Common */
+.section {
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 5.5vw, 76px);
+  letter-spacing: 2px;
+  line-height: 0.95;
+  margin: 16px 0 0;
+  text-transform: uppercase;
+}
+.section-head p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 380px;
+  margin: 0;
+}
+
+/* Menu Filters */
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.filters button {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: rgba(255,255,255,0.03);
+  color: var(--cream);
+  padding: 11px 22px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+.filters button[aria-pressed="true"] {
+  background: var(--orange);
+  color: #140a02;
+  border-color: var(--orange);
+}
+.filters button:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.filters button[aria-pressed="true"]:hover {
+  color: #140a02;
+}
+
+/* Food Grid */
+.food-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+}
+.food {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.food:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-orange);
+}
+.food[hidden] { display: none; }
+.food-title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.food h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 27px;
+  letter-spacing: 1px;
+  margin: 0;
+  color: #fff;
+}
+.food small {
+  font-size: 9px;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  background: rgba(244, 122, 0, 0.12);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.food p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 380px;
+  margin: 6px 0 0;
+}
+.food-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  white-space: nowrap;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--orange);
+}
+.add {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--orange);
+  color: var(--orange);
+  background: transparent;
+  font-size: 22px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.add:hover {
+  background: var(--orange);
+  color: #140a02;
+  transform: scale(1.1);
+}
+.small-note {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 24px;
+}
+
+/* Combo Banner */
+.combo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--dark-surface);
+  border-top: 2px solid var(--orange);
+  border-bottom: 2px solid var(--orange);
+}
+.combo-image {
+  min-height: 440px;
+  position: relative;
+  overflow: hidden;
+}
+.combo-image img {
+  object-position: center 60%;
+  transform: scale(1.08);
+  filter: brightness(0.85);
+}
+.image-label {
+  position: absolute;
+  bottom: 24px;
+  left: 28px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 800;
+  background: rgba(0,0,0,0.6);
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+.combo-content {
+  padding: 65px 60px;
+  align-self: center;
+}
+.combo h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 0.95;
+  letter-spacing: 2px;
+  margin: 18px 0;
+  text-transform: uppercase;
+}
+.combo p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 420px;
+}
+.combo-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  color: var(--orange);
+  letter-spacing: 2px;
+  margin: 22px 0;
+}
+
+/* Sobre Section */
+.manifesto {
+  display: grid;
+  grid-template-columns: 0.65fr 1fr;
+  gap: 90px;
+  align-items: flex-start;
+}
+.manifesto h2 {
+  max-width: 320px;
+}
+.manifesto-copy > p {
+  font-size: 22px;
+  line-height: 1.6;
+  letter-spacing: -0.3px;
+  margin: 0 0 32px;
+}
+.manifesto-copy > p span {
+  color: var(--orange);
+}
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.pillar {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.pillar strong {
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  color: var(--orange);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+.pillar p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Localização & Mapa */
+.location-section {
+  background: #170d03;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding: 85px 0;
+  align-items: flex-start;
+}
+.location-grid h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 5vw, 68px);
+  letter-spacing: 2px;
+  line-height: 0.95;
+  margin: 16px 0 24px;
+  text-transform: uppercase;
+}
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 10px;
+}
+.loc-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.loc-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.loc-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--orange);
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.loc-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #fff;
+  font-weight: 600;
+}
+.loc-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.map-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 2px solid var(--line-orange);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  background: #0f0701;
+}
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.wpp-main-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--green-wpp);
+  color: #fff;
+  padding: 16px 28px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  margin-top: 26px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+.wpp-main-cta:hover {
+  background: #1eb956;
+  transform: translateY(-2px);
+  color: #fff;
+}
+.wpp-main-cta svg { width: 22px; height: 22px; fill: currentColor; }
+
+/* Horários / Como Pedir */
+.visit {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 60px 0;
+}
+.visit h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  letter-spacing: 2px;
+  margin-top: 16px;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+.hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.hours h3 {
+  font-size: 11px;
+  color: var(--orange);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  font-weight: 800;
+}
+.hours p {
+  line-height: 1.8;
+  font-size: 13px;
+  color: var(--muted-light);
+  margin: 0;
+}
+
+/* FAQ */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  gap: 90px;
+}
+.faq-grid h2 { max-width: 320px; }
+.faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+';
+  color: var(--orange);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+}
+.faq details[open] summary::after { content: '−'; }
+.faq details p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 14px 0 0;
+}
+
+/* Footer */
+.footer {
+  background: var(--orange);
+  color: #140a02;
+  padding: 55px 0 30px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(65px, 13vw, 160px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 0.85;
+  color: #140a02;
+  text-decoration: none;
+}
+.footer-top p {
+  max-width: 280px;
+  font-size: 13px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+.footer-bottom {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  border-top: 1px solid rgba(20, 10, 2, 0.25);
+  padding-top: 22px;
+  margin-top: 38px;
+  font-size: 11px;
+  line-height: 1.6;
+  flex-wrap: wrap;
+  font-weight: 600;
+}
+
+/* Cart Dialog */
+dialog {
+  width: min(520px, calc(100% - 32px));
+  max-height: 90dvh;
+  padding: 0;
+  background: #fff8ef;
+  color: #140a02;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.7);
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+}
+.dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  border-bottom: 1px solid rgba(20, 10, 2, 0.12);
+  background: #fcefdc;
+}
+.dialog-head h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  margin: 0;
+  color: #140a02;
+}
+.close {
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: #140a02;
+  line-height: 1;
+}
+.dialog-body {
+  padding: 26px 28px;
+  overflow-y: auto;
+}
+.dialog-body p.intro-note {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #7a6a58;
+  margin-top: 0;
+}
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(20, 10, 2, 0.08);
+}
+.cart-row h3 {
+  font-size: 14px;
+  margin: 0 0 4px;
+  font-weight: 700;
+}
+.cart-row small {
+  font-size: 11px;
+  color: #7a6a58;
+}
+.quantity {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.quantity button {
+  border: 1px solid rgba(20, 10, 2, 0.25);
+  background: transparent;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 24px 0;
+  font-size: 22px;
+  font-weight: 900;
+}
+.total span:first-child {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #7a6a58;
+}
+.dialog-body > .button {
+  width: 100%;
+}
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Floating Cart & WhatsApp */
+.floating-cart {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--orange);
+  color: #140a02;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 25px rgba(244, 122, 0, 0.45);
+  transition: transform 0.25s, box-shadow 0.25s;
+  border: 0;
+  cursor: pointer;
+}
+.floating-cart:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.6), 0 0 35px rgba(244, 122, 0, 0.65);
+}
+.floating-cart-count {
+  background: #140a02;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.floating-wpp {
+  position: fixed;
+  bottom: 88px;
+  right: 24px;
+  z-index: 89;
+  background: var(--green-wpp);
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.floating-wpp:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+}
+.floating-wpp svg { width: 30px; height: 30px; fill: #fff; }
+
+/* Toast */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(30px);
+  background: var(--orange);
+  color: #140a02;
+  padding: 13px 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  z-index: 100;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  max-width: calc(100% - 32px);
+  text-align: center;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Order Confirmation Card in Dialog */
+.alex-receipt {
+  background: #140a02;
+  color: #fff;
+  border: 1px solid var(--orange);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 18px;
+  text-align: left;
+}
+.alex-receipt-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(244,122,0,0.4);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+  .wrap { width: calc(100% - 40px); }
+  .hero { grid-template-columns: 1fr; gap: 40px; min-height: auto; padding-top: 35px; }
+  .hero-photo { height: 420px; }
+  .manifesto, .location-grid, .faq-grid { grid-template-columns: 1fr; gap: 40px; }
+  .combo { grid-template-columns: 1fr; }
+  .combo-image { min-height: 320px; }
+  .combo-content { padding: 45px 35px; }
+}
+@media (max-width: 680px) {
+  html { scroll-padding-top: 80px; }
+  .demo { font-size: 9px; letter-spacing: 0.5px; padding: 9px 12px; }
+  .nav { height: 74px; gap: 14px; }
+  .logo-img { width: 48px; height: 48px; }
+  .logo-text strong { font-size: 21px; }
+  .menu-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: #140a02;
+    padding: 24px;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 18px;
+  }
+  .nav-links.open { display: flex; }
+  .btn-wpp { display: none; }
+  .hero h1 { font-size: clamp(55px, 15vw, 85px); }
+  .food-grid { grid-template-columns: 1fr; }
+  .section { padding-top: 65px; padding-bottom: 65px; }
+  .section-head { display: block; }
+  .section-head p { margin-top: 14px; }
+  .pillars { grid-template-columns: 1fr; gap: 20px; }
+  .visit { grid-template-columns: 1fr; gap: 28px; padding: 40px 0; }
+  .hours { grid-template-columns: 1fr; gap: 20px; }
+  .footer-top { display: block; }
+  .footer-top p { margin-top: 20px; }
+  .footer-logo { font-size: 78px; }
+  .dialog-head, .dialog-body { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .alex-marquee-track { animation: none; }
+  .hero-badge { animation: none; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Notification Banner -->
+<div class="demo">
+  <span class="demo-tag">⚠️ previa com dados ainda nao confirmados-site de previa</span>
+  <span>•</span>
+  <a href="https://wa.me/5521967075858" target="_blank" rel="noopener">Contato Project Web: (21) 96707-5858 ↗</a>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <nav class="nav wrap" aria-label="Navegação principal">
+    <a class="logo" href="#inicio" aria-label="Hamburgueria Alexandre, início">
+      <img class="logo-img" src="assets/logo-alexandre.png" alt="Logo Hamburgueria Alexandre">
+      <div class="logo-text">
+        <strong>HAMBURGUERIA <span>ALEXANDRE</span></strong>
+        <small>Nova Iguaçu · RJ</small>
+      </div>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu ☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#sobre">Nossa história</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#contato">Como pedir</a>
+    </div>
+    <a class="btn-wpp" href="https://wa.me/5521987952645?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hamburgueria%20Alexandre%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.29-.15-1.73-.85-2-1s-.46-.13-.65.15c-.19.28-.74.93-.9 1.12-.17.2-.33.22-.62.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.23-.56-.47-.48-.65-.49h-.55c-.19 0-.5.07-.77.36-.26.29-1 1-1 2.44s1.03 2.83 1.17 3.03c.14.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.8.11.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33Z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.59 1.38 5.08L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18.15c-1.72 0-3.31-.49-4.66-1.34l-.33-.2-3.44.9.93-3.37-.22-.35A8.11 8.11 0 0 1 3.85 12C3.85 7.48 7.48 3.85 12 3.85S20.15 7.48 20.15 12 16.52 20.15 12 20.15Z"/></svg>
+      (21) 98795-2645
+    </a>
+    <button class="cart-button" id="open-cart" aria-label="Abrir pedido">
+      Meu Pedido <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </nav>
+</header>
+
+<main id="inicio">
+
+<!-- Hero Section -->
+<section class="hero wrap" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <span>🔥 Chapa Quente · Pedidos via WhatsApp</span>
+    </div>
+    <div class="eyebrow">Hamburgueria Artesanal em Nova Iguaçu</div>
+    <h1 id="hero-title">
+      Aqui tem<br>
+      <em>Sabor de verdade</em><br>
+      <span class="subtext">na chapa quente.</span>
+    </h1>
+    <p>A Hamburgueria Alexandre fica no Jardim Paraíso, em Nova Iguaçu. Hambúrgueres artesanais montados com ingredientes selecionados, pão fresquinho e aquele capricho que você merece.</p>
+    <div class="hero-actions">
+      <a href="#cardapio" class="button">Ver o Cardápio ↘</a>
+      <a href="https://wa.me/5521987952645?text=Ol%C3%A1,%20Hamburgueria%20Alexandre!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener" class="button wpp-btn-hero">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.73-.85-2-1s-.46-.13-.65.15c-.19.28-.74.93-.9 1.12-.17.2-.33.22-.62.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.23-.56-.47-.48-.65-.49h-.55c-.19 0-.5.07-.77.36-.26.29-1 1-1 2.44s1.03 2.83 1.17 3.03c.14.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.8.11.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33Z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.59 1.38 5.08L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18.15c-1.72 0-3.31-.49-4.66-1.34l-.33-.2-3.44.9.93-3.37-.22-.35A8.11 8.11 0 0 1 3.85 12C3.85 7.48 7.48 3.85 12 3.85S20.15 7.48 20.15 12 16.52 20.15 12 20.15Z"/></svg>
+        Pedir no WhatsApp
+      </a>
+      <a href="#localizacao" class="button outline">Como Chegar 📍</a>
+    </div>
+    <span class="hero-note">R. Humeboshi, 302 · Jardim Paraíso · Nova Iguaçu - RJ</span>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-desc">Artesanal</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">🔥</div>
+        <div class="hero-stat-desc">Chapa Quente</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Nova Iguaçu</div>
+        <div class="hero-stat-desc">Jardim Paraíso</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="assets/burger.jpg" alt="Hambúrguer artesanal da Hamburgueria Alexandre" fetchpriority="high">
+    <div class="hero-badge">HAMBURGUERIA<br>ALEXANDRE<br>★ RJ ★</div>
+  </div>
+</section>
+
+<!-- Animated Marquee -->
+<div class="alex-marquee" aria-hidden="true">
+  <div class="alex-marquee-track">
+    <div class="alex-item"><span>🍔</span> Hamburgueria Alexandre</div>
+    <div class="alex-item"><span>🔥</span> Artesanal na chapa quente</div>
+    <div class="alex-item"><span>🍟</span> Batatas crocantes</div>
+    <div class="alex-item"><span>📍</span> R. Humeboshi, 302 · Jardim Paraíso</div>
+    <div class="alex-item"><span>💬</span> WhatsApp: (21) 98795-2645</div>
+    <div class="alex-item"><span>🍔</span> Hamburgueria Alexandre</div>
+    <div class="alex-item"><span>🔥</span> Artesanal na chapa quente</div>
+    <div class="alex-item"><span>🍟</span> Batatas crocantes</div>
+    <div class="alex-item"><span>📍</span> R. Humeboshi, 302 · Jardim Paraíso</div>
+    <div class="alex-item"><span>💬</span> WhatsApp: (21) 98795-2645</div>
+  </div>
+</div>
+
+<!-- Cardápio Section -->
+<section class="section wrap" id="cardapio">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Cardápio em Destaque</div>
+      <h2>Qual é a sua<br>fome de hoje?</h2>
+    </div>
+    <p>Adicione os itens ao seu pedido e envie direto para o nosso WhatsApp para agilizar seu atendimento!</p>
+  </div>
+  <div class="filters" aria-label="Categorias do cardápio">
+    <button aria-pressed="true" data-filter="all">Tudo na mesa</button>
+    <button aria-pressed="false" data-filter="burger">Burgers</button>
+    <button aria-pressed="false" data-filter="side">Acompanhamentos</button>
+    <button aria-pressed="false" data-filter="drink">Bebidas</button>
+  </div>
+  <div class="food-grid" id="food-grid"></div>
+  <p class="small-note">⚠️ previa com dados ainda nao confirmados-site de previa · Confirme os preços, itens do dia e taxa de entrega diretamente no WhatsApp.</p>
+</section>
+
+<!-- Combo Destaque -->
+<section class="combo" id="combo">
+  <div class="combo-image">
+    <img src="assets/burger.jpg" alt="Combo Alexandre com hambúrguer artesanal, batata e refrigerante" loading="lazy">
+    <span class="image-label">O combo mais pedido</span>
+  </div>
+  <div class="combo-content">
+    <div class="eyebrow">O clássico, completo</div>
+    <h2>Combo<br>Alexandre.</h2>
+    <p>Hambúrguer artesanal duplo + porção individual de batatas crocantes + refrigerante em lata gelado. A combinação que não tem erro!</p>
+    <div class="combo-price">R$ 44,00 <span style="font-size:16px;color:var(--muted);font-family:'Inter',sans-serif;font-weight:400">(estimativa prévia)</span></div>
+    <button class="button" data-add="combo">Adicionar ao Pedido <span aria-hidden="true">+</span></button>
+    <p class="small-note">Preço e composição de prévia · confirmar no WhatsApp.</p>
+  </div>
+</section>
+
+<!-- Sobre Nós Section -->
+<section class="section wrap manifesto" id="sobre">
+  <div>
+    <div class="eyebrow">Nossa História</div>
+    <h2>Menos pose.<br>Mais sabor.</h2>
+  </div>
+  <div class="manifesto-copy">
+    <p>A <strong>Hamburgueria Alexandre</strong> nasceu no Jardim Paraíso, em Nova Iguaçu, com o objetivo de oferecer uma comida feita com carinho, carne suculenta e sabor inconfundível. <span>A estrela fica entre dois pães.</span></p>
+    <div class="pillars">
+      <div class="pillar">
+        <strong>01 / Carne de qualidade</strong>
+        <p>Blend artesanal prensado na chapa bem quente para formar aquela crostinha saborosa.</p>
+      </div>
+      <div class="pillar">
+        <strong>02 / No Jardim Paraíso</strong>
+        <p>Endereço fixo na R. Humeboshi, 302, atendendo a nossa vizinhança e toda Nova Iguaçu.</p>
+      </div>
+      <div class="pillar">
+        <strong>03 / Pedido Direto</strong>
+        <p>Atendimento sem intermediários pelo WhatsApp. Você fala direto com a gente!</p>
+      </div>
+      <div class="pillar">
+        <strong>04 / Para toda a família</strong>
+        <p>Opções para quem quer um lanche rápido ou para reunir os amigos no fim de semana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Localização com Google Maps -->
+<section class="location-section" id="localizacao">
+  <div class="wrap location-grid">
+    <div>
+      <div class="eyebrow">Localização & Contato</div>
+      <h2>Venha nos<br>conhecer.</h2>
+      <div class="location-info">
+        <div class="loc-item">
+          <span class="loc-icon">📍</span>
+          <div>
+            <div class="loc-label">Endereço</div>
+            <div class="loc-text">R. Humeboshi, 302</div>
+            <div class="loc-sub">Jardim Paraíso · Nova Iguaçu - RJ · CEP 26297-054</div>
+          </div>
+        </div>
+        <div class="loc-item">
+          <span class="loc-icon">📱</span>
+          <div>
+            <div class="loc-label">WhatsApp Oficial</div>
+            <div class="loc-text">
+              <a href="https://wa.me/5521987952645" target="_blank" rel="noopener" style="color:var(--orange)">
+                +55 (21) 98795-2645
+              </a>
+            </div>
+            <div class="loc-sub">Clique para iniciar uma conversa no WhatsApp</div>
+          </div>
+        </div>
+        <div class="loc-item">
+          <span class="loc-icon">🍔</span>
+          <div>
+            <div class="loc-label">Atendimento</div>
+            <div class="loc-text">Retirada no balcão e entregas na região</div>
+            <div class="loc-sub">Consulte horários e taxas de entrega pelo WhatsApp</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+        <a href="https://wa.me/5521987952645?text=Ol%C3%A1,%20gostaria%20de%20saber%20o%20hor%C3%A1rio%20de%20funcionamento%20e%20fazer%20um%20pedido." target="_blank" rel="noopener" class="wpp-main-cta">
+          <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.29-.15-1.73-.85-2-1s-.46-.13-.65.15c-.19.28-.74.93-.9 1.12-.17.2-.33.22-.62.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.23-.56-.47-.48-.65-.49h-.55c-.19 0-.5.07-.77.36-.26.29-1 1-1 2.44s1.03 2.83 1.17 3.03c.14.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.8.11.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33Z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.59 1.38 5.08L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18.15c-1.72 0-3.31-.49-4.66-1.34l-.33-.2-3.44.9.93-3.37-.22-.35A8.11 8.11 0 0 1 3.85 12C3.85 7.48 7.48 3.85 12 3.85S20.15 7.48 20.15 12 16.52 20.15 12 20.15Z"/></svg>
+          Chamar no WhatsApp ↗
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hamburgueria%20Alexandre&query_place_id=ChIJBbKqQdFZmQARTOkW_xp-s1A" target="_blank" rel="noopener" class="button outline" style="margin-top:26px">
+          Ver no Google Maps ↗
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="map-frame">
+        <iframe
+          src="https://maps.google.com/maps?q=R.+Humeboshi+302+Jardim+Paraiso+Nova+Iguacu+RJ+26297-054&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localização da Hamburgueria Alexandre no Google Maps"
+        ></iframe>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin-top:12px;text-align:center">
+        📍 R. Humeboshi, 302 - Jardim Paraíso, Nova Iguaçu - RJ
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Horários & Como Pedir -->
+<section class="wrap" id="contato">
+  <div class="visit">
+    <div>
+      <div class="eyebrow">Atendimento Local</div>
+      <h2>Sua próxima pausa<br>tem sabor.</h2>
+      <p class="small-note">R. Humeboshi, 302 · Jardim Paraíso · Nova Iguaçu, RJ</p>
+    </div>
+    <div class="hours">
+      <div>
+        <h3>Horários de Atendimento</h3>
+        <p>Consulte os horários do dia pelo WhatsApp.<br><br>Atendemos de terça a domingo no almoço e jantar!</p>
+      </div>
+      <div>
+        <h3>Como Fazer seu Pedido</h3>
+        <p>1. Escolha no cardápio acima.<br>2. Adicione ao carrinho.<br>3. Clique em enviar pelo WhatsApp.<br><br>
+          <a href="https://wa.me/5521987952645" target="_blank" rel="noopener" style="color:var(--orange);font-weight:700">
+            WhatsApp: (21) 98795-2645 ↗
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section wrap faq-grid">
+  <div>
+    <div class="eyebrow">Dúvidas Frequentes</div>
+    <h2>Tudo o que você<br>precisa saber.</h2>
+  </div>
+  <div class="faq">
+    <details>
+      <summary>Onde fica a Hamburgueria Alexandre?</summary>
+      <p>Estamos localizados na <strong>R. Humeboshi, 302, Jardim Paraíso, Nova Iguaçu - RJ (CEP 26297-054)</strong>. Venha nos visitar ou peça para entrega!</p>
+    </details>
+    <details>
+      <summary>Qual é o número de WhatsApp para pedidos?</summary>
+      <p>Nosso número oficial é <strong>+55 (21) 98795-2645</strong>. Você pode enviar uma mensagem a qualquer momento para conferir o cardápio e fazer seu pedido.</p>
+    </details>
+    <details>
+      <summary>Como funciona a entrega?</summary>
+      <p>Realizamos entregas no Jardim Paraíso e bairros vizinhos em Nova Iguaçu. Taxa e tempo de entrega variam conforme a localidade — consulte-nos pelo WhatsApp.</p>
+    </details>
+    <details>
+      <summary>Quais são as formas de pagamento?</summary>
+      <p>Aceitamos PIX, cartões de crédito/débito e dinheiro na entrega ou no balcão.</p>
+    </details>
+    <details>
+      <summary>Sobre esta página:</summary>
+      <p>Esta é uma <strong>previa com dados ainda nao confirmados-site de previa</strong> desenvolvida para a Hamburgueria Alexandre pela Project Web. Cardápio e preços são ilustrativos e serão validados junto ao estabelecimento.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="footer-logo" href="#inicio" aria-label="Hamburgueria Alexandre, início">ALEXANDRE</a>
+      <p>
+        <strong>Hamburgueria Alexandre</strong><br>
+        R. Humeboshi, 302 · Jardim Paraíso<br>
+        Nova Iguaçu - RJ · CEP 26297-054<br>
+        WhatsApp: <a href="https://wa.me/5521987952645" target="_blank" rel="noopener" style="color:#140a02;font-weight:900">(21) 98795-2645</a>
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <span>previa com dados ainda nao confirmados-site de previa</span>
+      <span>© Hamburgueria Alexandre · Nova Iguaçu - RJ</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast notification -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Cart Dialog Modal -->
+<dialog id="cart-dialog" aria-labelledby="cart-title">
+  <div class="dialog-head">
+    <h2 id="cart-title">Seu Pedido 🍔</h2>
+    <button class="close" aria-label="Fechar pedido">×</button>
+  </div>
+  <div class="dialog-body">
+    <p class="intro-note">Revise os itens antes de enviar para o WhatsApp da Hamburgueria Alexandre:</p>
+    <div id="cart-items"></div>
+    <div class="total">
+      <span>Total estimado:</span>
+      <span id="cart-total">R$ 0,00</span>
+    </div>
+    <button id="checkout-wpp" class="button" style="background:var(--green-wpp);color:#fff" disabled>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.73-.85-2-1s-.46-.13-.65.15c-.19.28-.74.93-.9 1.12-.17.2-.33.22-.62.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.23-.56-.47-.48-.65-.49h-.55c-.19 0-.5.07-.77.36-.26.29-1 1-1 2.44s1.03 2.83 1.17 3.03c.14.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.8.11.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33Z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.59 1.38 5.08L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18.15c-1.72 0-3.31-.49-4.66-1.34l-.33-.2-3.44.9.93-3.37-.22-.35A8.11 8.11 0 0 1 3.85 12C3.85 7.48 7.48 3.85 12 3.85S20.15 7.48 20.15 12 16.52 20.15 12 20.15Z"/></svg>
+      Enviar Pedido no WhatsApp ↗
+    </button>
+    <p style="font-size:11px;color:#7a6a58;margin-top:12px;text-align:center">
+      ⚠️ previa com dados ainda nao confirmados-site de previa
+    </p>
+    <div id="cart-feedback"></div>
+  </div>
+</dialog>
+
+<!-- Floating Buttons -->
+<a href="https://wa.me/5521987952645?text=Ol%C3%A1,%20gostaria%20de%20fazer%20um%20pedido%20na%20Hamburgueria%20Alexandre!" target="_blank" rel="noopener" class="floating-wpp" aria-label="Abrir WhatsApp da Hamburgueria Alexandre">
+  <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.29-.15-1.73-.85-2-1s-.46-.13-.65.15c-.19.28-.74.93-.9 1.12-.17.2-.33.22-.62.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.23-.56-.47-.48-.65-.49h-.55c-.19 0-.5.07-.77.36-.26.29-1 1-1 2.44s1.03 2.83 1.17 3.03c.14.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.8.11.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33Z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.59 1.38 5.08L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18.15c-1.72 0-3.31-.49-4.66-1.34l-.33-.2-3.44.9.93-3.37-.22-.35A8.11 8.11 0 0 1 3.85 12C3.85 7.48 7.48 3.85 12 3.85S20.15 7.48 20.15 12 16.52 20.15 12 20.15Z"/></svg>
+</a>
+
+<button class="floating-cart" id="floating-cart-btn" aria-label="Ver pedido">
+  <span>🍔</span> Ver Pedido <span class="floating-cart-count" id="float-count">0</span>
+</button>
+
+<script>
+// Produtos da Hamburgueria Alexandre (dados de prévia)
+const products = [
+  { id: 'alex-classico', name: 'Alexandre Clássico', category: 'burger', price: 26, tag: 'O mais pedido', description: 'Hambúrguer artesanal bovino, queijo cheddar derretido, alface fresca, tomate e maionese especial no pão brioche tostado.' },
+  { id: 'alex-duplo', name: 'Duplo Alexandre Bacon', category: 'burger', price: 36, tag: 'Campeão da casa', description: 'Dois hambúrgueres artesanais, fatias crocantes de bacon, queijo prato duplo, cebola caramelizada e molho barbecue.' },
+  { id: 'alex-especial', name: 'Alexandre Especial da Chapa', category: 'burger', price: 32, tag: 'Receita do chef', description: 'Blend artesanal suculento, queijo coalho tostado na chapa, melaço suave, rúcula e maionese de alho caseira.' },
+  { id: 'alex-frango', name: 'Frango Crispy Alexandre', category: 'burger', price: 28, tag: 'Super crocante', description: 'Filé de frango empanado ultra crocante, salada americana, picles da casa e molho tártaro especial.' },
+  { id: 'batata-palito', name: 'Batata Frita Crocante', category: 'side', price: 15, tag: 'Porção', description: 'Batata frita douradinha e sequinha com tempero especial de ervas finas e sal do himalaia.' },
+  { id: 'batata-cheddar', name: 'Batata Cheddar & Bacon', category: 'side', price: 24, tag: 'Para compartilhar', description: 'Porção generosa de batatas fritas cobertas com muito queijo cheddar cremoso e bacon em cubos crocantes.' },
+  { id: 'aneis-cebola', name: 'Anéis de Cebola Empanados', category: 'side', price: 18, tag: 'Petisco', description: 'Anéis de cebola dourados e crocantes acompanhados com molho barbecue artesanal.' },
+  { id: 'refrigerante', name: 'Refrigerante em Lata', category: 'drink', price: 7, tag: '350ml geladinho', description: 'Coca-Cola, Guaraná Antarctica ou Fanta Laranja. Escolha na hora do atendimento.' },
+  { id: 'suco-natural', name: 'Suco Natural', category: 'drink', price: 9, tag: 'Copo 400ml', description: 'Laranja, maracujá ou limão. Feito na hora com frutas frescas.' },
+  { id: 'combo', name: 'Combo Alexandre Completo', category: 'combo', price: 44, tag: 'Combo', description: 'Alexandre Clássico + Batata Frita individual + Refrigerante em lata gelado.' }
+];
+
+const money = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const cart = new Map();
+const grid = document.querySelector('#food-grid');
+
+// Renderizar itens do cardápio
+grid.innerHTML = products.filter(p => p.category !== 'combo').map(p => `
+  <article class="food" data-category="${p.category}">
+    <div>
+      <div class="food-title">
+        <h3>${p.name}</h3>
+        <small>${p.tag}</small>
+      </div>
+      <p>${p.description}</p>
+    </div>
+    <div class="food-price">
+      <span>${money(p.price)}</span>
+      <button class="add" data-add="${p.id}" aria-label="Adicionar ${p.name} ao pedido">+</button>
+    </div>
+  </article>
+`).join('');
+
+// Toast helper
+let toastTimer;
+function notify(text) {
+  const t = document.querySelector('#toast');
+  t.textContent = text;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.classList.remove('show'); }, 2600);
+}
+
+// Atualizar interface do carrinho
+function updateCart() {
+  let count = 0, total = 0;
+  const itemsContainer = document.querySelector('#cart-items');
+  
+  if (cart.size === 0) {
+    itemsContainer.innerHTML = '<p style="color:#7a6a58;font-size:13px;text-align:center;padding:20px 0">Seu pedido está vazio.<br>Escolha seus itens favoritos no cardápio!</p>';
+  } else {
+    itemsContainer.innerHTML = [...cart].map(([id, quantity]) => {
+      const p = products.find(prod => prod.id === id);
+      count += quantity;
+      total += p.price * quantity;
+      return `
+        <div class="cart-row">
+          <div>
+            <h3>${p.name}</h3>
+            <small>${money(p.price)} un. · Subtotal: ${money(p.price * quantity)}</small>
+          </div>
+          <div class="quantity">
+            <button data-quantity="${id}" data-change="-1" aria-label="Diminuir uma unidade">−</button>
+            <span style="font-weight:800;font-size:13px">${quantity}</span>
+            <button data-quantity="${id}" data-change="1" aria-label="Aumentar uma unidade">+</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  document.querySelector('#cart-count').textContent = count;
+  document.querySelector('#cart-total').textContent = money(total);
+  document.querySelector('#checkout-wpp').disabled = count === 0;
+
+  const floatCount = document.getElementById('float-count');
+  if (floatCount) {
+    floatCount.textContent = count;
+  }
+}
+
+// Adicionar e manipular quantidade
+document.addEventListener('click', event => {
+  const addBtn = event.target.closest('[data-add]');
+  if (addBtn) {
+    const id = addBtn.dataset.add;
+    cart.set(id, (cart.get(id) || 0) + 1);
+    updateCart();
+    const item = products.find(p => p.id === id);
+    notify(`🍔 ${item.name} adicionado ao pedido!`);
+  }
+
+  const changeBtn = event.target.closest('[data-quantity]');
+  if (changeBtn) {
+    const id = changeBtn.dataset.quantity;
+    const next = (cart.get(id) || 0) + Number(changeBtn.dataset.change);
+    if (next <= 0) cart.delete(id);
+    else cart.set(id, next);
+    updateCart();
+  }
+});
+
+// Filtros de categoria
+document.querySelectorAll('[data-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter]').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.food').forEach(item => {
+      item.hidden = filter !== 'all' && item.dataset.category !== filter;
+    });
+  });
+});
+
+// Modal do pedido
+const dialog = document.querySelector('#cart-dialog');
+document.querySelector('#open-cart').addEventListener('click', () => { updateCart(); dialog.showModal(); });
+document.getElementById('floating-cart-btn').addEventListener('click', () => { updateCart(); dialog.showModal(); });
+dialog.querySelector('.close').addEventListener('click', () => dialog.close());
+dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+
+// Finalizar pedido via WhatsApp
+document.getElementById('checkout-wpp').addEventListener('click', () => {
+  let itemsList = '';
+  let total = 0;
+  cart.forEach((q, id) => {
+    const p = products.find(prod => prod.id === id);
+    if (p) {
+      itemsList += `• ${q}x ${p.name} (${money(p.price * q)})
+`;
+      total += p.price * q;
+    }
+  });
+
+  const msg = `Olá, Hamburgueria Alexandre! Gostaria de fazer o seguinte pedido:
+
+${itemsList}
+*Total Estimado:* ${money(total)}
+
+*Meu Nome:* 
+*Endereço de Entrega ou Retirada:* 
+*Forma de Pagamento:* (PIX / Cartão / Dinheiro)`;
+  const wppUrl = `https://wa.me/5521987952645?text=${encodeURIComponent(msg)}`;
+  window.open(wppUrl, '_blank', 'noopener');
+  dialog.close();
+  notify('✨ Pedido gerado! Abrindo seu WhatsApp...');
+});
+
+// Menu Mobile
+const menuBtn = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+menuBtn.addEventListener('click', () => {
+  const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+  menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  navLinks.classList.toggle('open', !isOpen);
+});
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuBtn.setAttribute('aria-expanded', 'false');
+    navLinks.classList.remove('open');
+  });
+});
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Scroll Reveal com IntersectionObserver
+setTimeout(() => {
+  const reveals = document.querySelectorAll('.food, .combo, .pillar, details, .visit, .loc-item');
+  reveals.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-revealed');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+}, 100);
+</script>
+
+</body>
+</html>
